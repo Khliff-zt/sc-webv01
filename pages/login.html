@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Siha Science & Technology School</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <h1 class="text-center">Student Portal Login</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                            <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="student-life.html">Student Life</a></li>
+                            <li class="nav-item"><a class="nav-link" href="parents-community.html">Parents Community</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="login.html"><i class="fas fa-user-lock me-1"></i>Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h3 class="mb-0"><i class="fas fa-user-circle me-2"></i>Login to Your Account</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-primary active" id="studentBtn">Student</button>
+                                <button type="button" class="btn btn-outline-primary" id="teacherBtn">Teacher</button>
+                                <button type="button" class="btn btn-outline-primary" id="adminBtn">Admin</button>
+                            </div>
+                        </div>
+
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username or Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter your username or email" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="text-decoration-none">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-light text-center py-3">
+                        <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none">Contact administrator</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Siha Science & Technology School. All rights reserved.</p>
+            <p>
+                <i class="fas fa-map-marker-alt me-2"></i>123 Sanya Juu, Moshi, Tanzania | 
+                <i class="fas fa-envelope me-2"></i>info@siha-tech.edu | 
+                <i class="fas fa-phone me-2"></i>(+255) XXX XXX XXX
+            </p>
+        </div>
+    </footer>
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../static/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+
+            // User type selection
+            const userButtons = document.querySelectorAll('.btn-group .btn');
+            userButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    userButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update form placeholder based on user type
+                    const userType = this.id.replace('Btn', '');
+                    document.getElementById('username').placeholder = `Enter ${userType} username`;
+                });
+            });
+
+            // Form submission (just for demo, no actual backend)
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const userType = document.querySelector('.btn-group .active').id.replace('Btn', '');
+
+                alert(`Login attempt ${userType}:\nUsername: ${username}\nPassword: ${password.replace(/./g, 'X')}\n\nNo Backend Available, No actual login occurs. Wait For Version-02`);
+            });
+        });
+    </script>
+</body>
+</html>
