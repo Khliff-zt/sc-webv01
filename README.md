@@ -92,6 +92,8 @@ For backend features, wait for the next version, where we would use Django, Flas
 1. Clone the repo: `git clone https://github.com/Khliff-zt/sc-webv01.git`
 2. Open the `index.html` file in your browser to view the website.
 
+## Link Found Below:
+  https://khliff-zt.github.io/sc-webv01/
 ## Usage Instructions
 Open the website in a browser and navigate through the sections to explore the content.
 
